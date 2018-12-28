@@ -19,7 +19,8 @@ public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringRootConfig.class);
-
+        
+        //注意：getBean()里面写接口
         NewsService bean = context.getBean(NewsService.class);
 
         List<News> newsList = bean.selectAllIsCacheable();
